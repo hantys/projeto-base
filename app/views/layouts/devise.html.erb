@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <%= favicon_link_tag 'favicon.ico', rel: 'icon' %>
+
+    <title>Fabrica</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="container ">
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+          <% flash.each do |name, msg| %>
+              <%= content_tag(:div, msg, class: "alert alert-info") %>
+          <% end %>
+          <div class="my-3 p-3 bg-white rounded box-shadow">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'login', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>

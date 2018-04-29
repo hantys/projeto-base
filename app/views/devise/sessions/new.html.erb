@@ -1,0 +1,27 @@
+<%= form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' } do |f| %>
+
+  <div class="text-center mb-4">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
+    <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>
+  </div>
+  <div class="form-label-group">
+    <%= f.email_field :login, required: true, autofocus: true, id: "inputLogin", class: "form-control", placeholder: "Login address" %>
+    <label for="inputLogin">Login address</label>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.password_field  :password, required: true, autofocus: true, id: "inputPassword", class: "form-control", placeholder: "Password" %>
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" name="user[remember_me]" value="remember-me"> Remember me
+    </label>
+  </div>
+
+  <%= f.submit "Sign in",class:"btn btn-lg btn-primary btn-block" %>
+  <%= render "devise/shared/links" %>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+<% end %>

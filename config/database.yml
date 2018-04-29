@@ -1,0 +1,17 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password: root
+
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: fabrica_development
+
+test:
+  <<: *default
+  database: fabrica_test
